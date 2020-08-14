@@ -1,0 +1,11 @@
+{
+    "plugins": [
+        // "@babel/plugin-syntax-dinamic-import", //dynamic import
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-proposal-class-properties"
+    ],
+    "presets": [
+        "@babel/preset-env",  //js moderno
+        "@babel/preset-react" //jsx
+    ]
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './img/logo.png';
+import logo from './img/logo.png'
 import './App.css';
 
 function RenderizaCaracter(props){
@@ -36,7 +36,7 @@ class App extends React.Component {
     this.setState({ loading: true, error: null })
 
     try{
-        const response = await fetch(`https://rickandmortyapi.com/api/character?page=${this.state.nextPage}`);
+        const response = await fetch(`https://rickandmortyapi.com/api/character?page=${this.state.page}`);
         const data = await response.json();
         this.setState({
             loading: false,
@@ -44,8 +44,9 @@ class App extends React.Component {
                 info: data.info,
                 results: [].concat(this.state.data.results, data.results),
             },
-            page: this.state.page + 1,
+            page: this.state.page + 1
         });
+        console.log(this.state.page)
     } catch (error) {
         this.setState({
             loading: false,
@@ -53,7 +54,14 @@ class App extends React.Component {
         })
     }
   }
-
+  confirm = () => {
+    if(!this.state.loading){
+      if (this.state.data.info.pages>this.state.page-1){
+        return true
+      }
+    }
+    return false
+  }
     render() {
         if (this.state.error) {
           return `Error: ${this.state.error.message}`;
@@ -75,7 +83,7 @@ class App extends React.Component {
                 </div>
             )}
 
-            {!this.state.loading && (
+            {this.confirm() && (
                 <button onClick={() => this.fetchCharacters()}>
                     Load more
                 </button>

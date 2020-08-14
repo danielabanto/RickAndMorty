@@ -1,0 +1,18 @@
+npm init
+npm install webpack --save-dev --save-exact		
+npm install webpack-cli --save-dev --save-exact
+
+npm install --save-dev --save-exact css-loader		VAN JUNTOS Acepta CSS
+npm install --save-dev --save-exact style-loader	VAN JUNTOS Corre Css
+
+npm install mini-css-extract-plugin html-webpack-plugin --save-dev --save-exact
+
+npm install --save-dev --save-exact webpack-dev-server
+
+
+npm install --save-dev --save-exact @babel/core babel-loader @babel/preset-env
+
+npm install --save-dev --save-exact @babel/plugin-transform-runtime
+	Sirve para asincronismo (async await)
+
+npm install --save --save-exact @babel/runtime
