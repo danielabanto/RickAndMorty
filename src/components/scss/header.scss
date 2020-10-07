@@ -1,0 +1,121 @@
+.header{
+    position: fixed;
+    width: 100%;
+    background-color: rgb(23, 23, 59);
+}
+.container_header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 2%;
+    align-items: center;
+    // max-width: 1200px;
+}
+.header_img{
+    // height: 120px;
+    width: 28vw;
+}
+.header_list{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+.header_list_element{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 10px 1px;
+    color: gray;
+    // font-size: 2em;
+    font-size: 2.6vw;
+}
+.header_list_element a{
+    padding: 5px 10px;
+}
+.activo{
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    color: rgb(238, 184, 174);
+    // font-weight: bold;
+}
+#hamburger{
+    display: none;
+    width: 50px;
+    height: 50px;
+}
+
+.scroll_header{
+    background-color:  rgba(1, 1, 26, 0.9);
+    
+    height: 80px;
+    z-index: 100;
+}
+.scroll_header_img{
+    height: 80px;
+}
+// .scroll_header_list_element{
+    // padding: 0px 10px;
+// }
+
+
+@media screen and (max-width: 1023px){
+    .container_header{
+        padding: 0 1%;
+    }
+    .header_img{
+        width: 30vw;
+    }
+    .header_list_element{
+        font-size: 2.9vw;
+    }
+}
+@media screen and (max-width: 767px){
+    .container_header{
+        padding: 0 3%;
+    }
+    .header{
+        z-index: 100;
+    }
+    #hamburger{
+        display: flex;
+        padding: 3px;
+        border: 1px solid rgba(255, 255, 255, 0.664);
+        border-radius: 5px;
+    }
+    #hamburger:hover {
+        cursor: pointer;
+    }
+    .container_header{
+        flex-wrap: wrap;
+    }
+    .header_list{
+        display: none;
+    }
+    .flex{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background-color: rgba(1, 1, 26, 0.9);
+        z-index: 100;
+        // margin-left: 5px;
+    }
+    .header_list_element{
+        margin-left: 20px;
+        padding: 4px;
+    }
+    .activo{
+        border: none;
+        font-weight: bold;
+    }
+    
+}
+@media screen and (max-width: 480px){
+    
+}
+@media screen and (max-width: 320px){
+    
+}

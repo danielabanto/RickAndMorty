@@ -11,14 +11,15 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: 'http://localhost:3000',
+        publicPath: '/',
         chunkFilename: 'js/[id].[chunkhash].js'
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
         hot: true,
         open: true,
-        port: 3000
+        port: 3000,
+        historyApiFallback: true
     },
     resolve: {
         extensions: ['.js', '.jsx']

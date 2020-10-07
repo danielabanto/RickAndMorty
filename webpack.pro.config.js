@@ -14,7 +14,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].[hash].js',
-        // publicPath: 'https://danielabanto.github.io/premium_escuela/dist',
+        publicPath: '',
         chunkFilename: 'js/[id].[chunkhash].js'
     },
     resolve: {

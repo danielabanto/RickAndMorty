@@ -1,0 +1,43 @@
+.DetailCharacter_container{
+    padding: 20px 5% 50px 5%;
+    font-size: 1.5em;
+    margin-top: 120px;
+}
+.DetailCharacter_info_container {
+    display: flex;
+}
+.DetailCharacter_figure{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+.DetailCharacter_figure img{
+    object-fit: cover;
+    object-position: center;
+    width: 400px;
+}
+.DetailCharacter_content{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 5px;
+}
+.DetailCharacter_content h2{
+    padding: 10px 0px;
+}
+.go_back_container{
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+}
+.go_back{
+    text-align: right;
+    font-style: italic;
+    color: cornflowerblue;
+    padding: 5px 10px;
+}
+.go_back:hover {
+    cursor: pointer;
+    font-size: 1.02em;
+}

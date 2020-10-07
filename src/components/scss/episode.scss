@@ -1,0 +1,85 @@
+.Episode_container{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3em;
+    padding: 10px 5% 50px 5%;
+    margin-top: 120px;
+}
+.Episode_Temporadas{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+}
+.Episode_Temporadas p{
+    font-size: 1.5em;
+    margin: auto 0;
+    padding: 5px 10px
+}
+.Episode_Temporadas a{
+    font-size: 1.5em;
+    padding: 5px 15px;
+    margin: auto 5px;
+    border: 1px solid green;
+    border-radius: 50%;
+}
+.Episode_Temporadas a:hover{
+    cursor: pointer;
+}
+.Episode_seleccione{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1.5em;
+    font-style: italic;
+    font-size: 1.5em;
+    color: rgba(116, 114, 114, 0.9);
+    width: 100%;
+    height: 100%;
+    background-image: url('../../img/temporadas.jpg');
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(49, 46, 46);
+}
+.Episode_capitulos{
+    width: 100%;
+    display: flex;
+    height: 400px;
+    margin: 20px 0;
+}
+.Episode_capitulos figure {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Episode_capitulos figure img {
+    width: 350px;
+}
+.Episode_capitulos ul{
+    // background-color: blue;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.Episode_capitulos ul a{
+    width: 90%;
+    align-self: flex-end;
+    // background-color: green;
+    padding: .2em 0;
+    opacity: 1;
+    will-change: opacity, width;
+    animation-name: aparecer;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 100%
+    }
+}

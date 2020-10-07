@@ -1,0 +1,28 @@
+.DetailEpisode_container{
+    padding: 20px 5% 50px 5%;
+    font-size: 1.5em;
+    max-width: 1000px;
+    margin: 120px auto 0 auto;
+
+}
+.DetailEpisode_container h1{
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.DetailEpisode_container h2{
+    padding-bottom: 10px;
+}
+.DetailEpisode_container p{
+    padding-bottom: 10px;
+}
+.go_back{
+    text-align: right;
+    font-style: italic;
+    color: cornflowerblue;
+    padding: 5px 10px;
+}
+.go_back:hover {
+    cursor: pointer;
+    font-size: 1.02em;
+}
