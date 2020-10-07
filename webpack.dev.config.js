@@ -11,7 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: '/',
+        publicPath: '/', //ojo
         chunkFilename: 'js/[id].[chunkhash].js'
     },
     devServer: {
@@ -19,7 +19,7 @@ module.exports = {
         hot: true,
         open: true,
         port: 3000,
-        historyApiFallback: true
+        historyApiFallback: true //ojo
     },
     resolve: {
         extensions: ['.js', '.jsx']

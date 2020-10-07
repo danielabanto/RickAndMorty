@@ -63,9 +63,6 @@ class Episodes extends Component {
         if (this.state.error)  {
             return(<h1>{this.state.error.message}</h1>)
         }    
-        if (this.state.loading) {
-            return(< Spinner />)
-        } 
         return(
             <Episode 
                 state = {this.state}
