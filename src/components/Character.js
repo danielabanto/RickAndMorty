@@ -23,7 +23,7 @@ const Character = (props) => {
                 style={{backgroundImage: `url(${character.image})`}}
                 >
                     <div className="gallery_text">
-                    {character.name}
+                        <p>{character.name}</p>
                     </div>
                 </div>
             </li>

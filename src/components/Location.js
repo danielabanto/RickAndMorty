@@ -18,7 +18,7 @@ const Location = (props) => {
                 key={location.id}
             >
             <li>
-                <h2>{location.name}</h2>
+                <p><b>{location.name}</b></p>
                 <p>{location.type}</p>
                 <p>{location.dimension}</p>
             </li>

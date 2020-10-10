@@ -10,6 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
+  
 }
 
 code {
@@ -28,4 +29,40 @@ ol {
 a{
   text-decoration: none;
   color: white;
+}
+html{
+  font-size: 16px;
+}
+h1{
+  font-size: 3rem;
+}
+h2{
+  font-size: 2.5rem;
+}
+h3{
+  font-size: 2rem;
+}
+p{
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1023px){
+  html{
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 767px){
+  html{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px){
+  html{
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 320px){
+  html{
+    font-size: 12px;
+  }
 }

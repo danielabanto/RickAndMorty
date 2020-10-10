@@ -7,9 +7,9 @@ const DetailEpisode = (props) => {
     console.log(episode)
     return(
         <div className="DetailEpisode_container">
-            <h1>{episode.name}</h1>
-            <h2>Season: {episode.episode.slice(1,3)}</h2>
-            <h2>Episode: {episode.episode.slice(4,6)}</h2>
+            <h2>{episode.name}</h2>
+            <h3>Season: {episode.episode.slice(1,3)}</h3>
+            <h3>Episode: {episode.episode.slice(4,6)}</h3>
             <p>Air date: {episode.air_date}</p>
             <details>
                 <summary>Characters: {episode.characters.length}</summary>
@@ -18,7 +18,7 @@ const DetailEpisode = (props) => {
                 ))}
             </details>
             <div className="go_back_container">
-                <a className="go_back" onClick={props.history.goBack}>Regresar</a>
+                <p><a className="go_back" onClick={props.history.goBack}>Regresar</a></p>
             </div>
         </div>
     )

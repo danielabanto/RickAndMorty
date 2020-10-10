@@ -23,7 +23,7 @@ const DetailCharacter = (props) => {
                     <p>Specie: {data.species}</p>
                     <p>Status: {data.status}</p>
                     <details>
-                        <summary>Episodes: {data.episode.length}</summary>
+                        <summary className="DetailCharacter_summary">Episodes: {data.episode.length}</summary>
                         {data.episode.map((episode, num)=>(
                             <span key={num}>{episode.split('https://rickandmortyapi.com/api/episode/')[1]}  .  </span>  
                         ))}
@@ -32,7 +32,7 @@ const DetailCharacter = (props) => {
                 </div>
             </div>
             <div className="go_back_container">
-                <a className="go_back" onClick={props.history.goBack}>Regresar</a>
+                <p><a className="go_back" onClick={props.history.goBack}>Regresar</a></p>
             </div>
         </div>
     )

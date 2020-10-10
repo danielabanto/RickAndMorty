@@ -3,11 +3,9 @@ body {
   display: flex;
   justify-content: center;
 }
-.container {
-  /* display: block;
-  padding: 50px 5%; */
+.container_app {
+  margin-top: 120px;
 }
-
 button {
   margin-top: 15px;
   font-size: 20px;
@@ -25,5 +23,31 @@ button {
   100% {
       filter: blur(0px);
       opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .container_app {
+      margin-top: 120px;
+  }
+}
+@media screen and (max-width: 1023px){
+  .container_app{
+      margin-top: 110px;
+  }
+}
+@media screen and (max-width: 950px){
+  .container_app{
+      margin-top: 80px;
+  }
+}
+@media screen and (max-width: 767px){
+  .container_app{
+      margin-top: 110px;
+  }   
+}
+@media screen and (max-width: 480px){
+  .container_app{
+      margin-top: 90px;
   }
 }

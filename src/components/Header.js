@@ -9,30 +9,21 @@ const Header = () => {
     useEffect(()=>{
         window.onscroll = () =>{
             if (window.scrollY > 60 && !scrolledY) {
-                setScrolledY(true)
-                console.log(scrolledY)
                 cambiar()
             }
             if (window.scrollY <= 60 && scrolledY) {
-                setScrolledY(false)
-                console.log(scrolledY)
                 cambiar()
             }
         }
     },[scrolledY])
     const cambiar = () => {
         const header = document.querySelector('.header')
-        const header_img = document.querySelector('.header_img')
-        // const header_list_element = document.querySelector('.header_list_element')
         if (!scrolledY) {
             header.classList.add('scroll_header')
-            header_img.classList.add('scroll_header_img')
-            // header_list_element.classList.add('scroll_header_list_element')
         } else {
             header.classList.remove('scroll_header')
-            header_img.classList.remove('scroll_header_img')
-            // header_list_element.classList.remove('scroll_header_list_element')
         }
+        setScrolledY(!scrolledY)
     }
 
     const handleclick = () => {
@@ -40,6 +31,7 @@ const Header = () => {
         const header_list = document.querySelector('.header_list')
         header_list.classList.toggle('flex')
     }
+    
     return(
         <Fragment>
             <header className="header">

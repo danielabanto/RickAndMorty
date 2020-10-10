@@ -17,7 +17,7 @@ const App = () => {
   return(
     <Router>
       <Header />
-      <div className="container">
+      <div className="container_app">
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/characters' component={Characters} />

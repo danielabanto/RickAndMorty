@@ -72,8 +72,8 @@ const Episode = (props) => {
                             key={data[indice][num].id}
                         >
                         <li>
-                            <b>Episode {data[indice][num].episode.slice(4,6)}: </b>
-                            {data[indice][num].name}
+                            <p><b>Episode {data[indice][num].episode.slice(4,6)}: </b>
+                            {data[indice][num].name}</p>
                         </li>
                         </Link>
                     ))}                            
