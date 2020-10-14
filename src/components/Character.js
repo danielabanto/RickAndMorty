@@ -1,15 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Spinner from '../general/Spinner'
 import { Link } from 'react-router-dom'
 import './scss/character.scss'
 
 const Character = (props) => {
-    const { fetchCharacters } = props
-    const { data, loading, page, maxPage } = props.state
+    const [verboton, setVerboton] = useState(true)
+    const [renderArray, setRenderArray] = useState([])
+    const [final, setFinal] = useState(0)
+    const { characters, cargando} = props
+    const INCREMENTO = 20
+    useEffect(()=>{
+        setFinal( final + INCREMENTO)
+        traerData()
+    }, [characters])
+    const traerData = () => {
+        if (characters.length) {
+            setRenderArray(characters.slice(0, final))
+        }  
+    }
+    // traerData()
+    const moreCharacters = () =>{
+        traerData()
+        if ( final+INCREMENTO >= characters.length-1 ) {
+            setFinal(characters.length)
+        } else {
+            setFinal( final+INCREMENTO ) 
+        }
+        if (final >= characters.length) {
+            setVerboton(false)
+        } 
+    }
     return (
       <>
         <ul className="container_gallery">
-        {data.results.map(character => (
+        {(renderArray) && (renderArray.map(character => (
             <Link 
                 to={{
                     pathname: `/character/${character.id}`,
@@ -19,8 +43,8 @@ const Character = (props) => {
             >
             <li>
                 <div 
-                className="gallery" 
-                style={{backgroundImage: `url(${character.image})`}}
+                    className="gallery" 
+                    style={{backgroundImage: `url(${character.image})`}}
                 >
                     <div className="gallery_text">
                         <p>{character.name}</p>
@@ -28,13 +52,13 @@ const Character = (props) => {
                 </div>
             </li>
             </Link>
-        ))}
+        )))}
         </ul>
-        {loading && (
+        {cargando && (
             <Spinner />
         )}
-        { (page <= maxPage && !loading) && (
-            <button onClick={() => fetchCharacters()}>
+        { (verboton) && (
+            <button onClick={() => moreCharacters()}>
                 Load more
             </button>
         )}

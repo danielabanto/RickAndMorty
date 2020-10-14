@@ -1,48 +1,31 @@
-import React from 'react'
+import React, { useEffect} from 'react'
+import { connect } from 'react-redux'
 import Character from '../components/Character'
+import * as characterActions from '../actions/characterActions'
   
-class Characters extends React.Component {
-    state = {
-      page: 1,
-      maxPage: undefined,
-      loading: true,
-      error: null,
-      data : {
-        results: [],
-      },
+const Characters = (props) => {
+    useEffect(() => {
+      props.traerTodos()
+    },[])
+    // console.log(props)
+    if (props.error) {
+      return `Error: ${props.error.message}`;
     }
-    componentDidMount() {
-      this.fetchCharacters()
-    }
-    fetchCharacters = async () => {
-      this.setState({ loading: true, error: null })
-      try{
-          const response = await fetch(`https://rickandmortyapi.com/api/character?page=${this.state.page}`);
-          const data = await response.json();
-          this.setState({
-              loading: false,
-              data: {
-                  info: data.info,
-                  results: [].concat(this.state.data.results, data.results),
-              },
-              page: this.state.page + 1,
-              maxPage: data.info.pages
-          });
-      } catch (error) {
-          this.setState({
-              loading: false,
-              error: error,
-          })
-      }
-    }
-    render() {
-        if (this.state.error) {
-          return `Error: ${this.state.error.message}`;
-        }
-        return (
-          <Character state={this.state} fetchCharacters={this.fetchCharacters}/>
-        );
-    }
+    return (
+      // <h1>hola mundo</h1>
+      <Character 
+        characters={props.characters} 
+        cargando={props.cargando}
+        error={props.error} 
+      />
+    );
+  }
+
+  const mapStateToProps = (reducers) => {
+    return reducers.characterReducer
+  }
+  const mapDispatchToProps = {
+    ...characterActions
   }
   
-  export default Characters;
+  export default connect(mapStateToProps, mapDispatchToProps)(Characters);

@@ -20,7 +20,7 @@ const Location = (props) => {
             <li>
                 <p><b>{location.name}</b></p>
                 <p>{location.type}</p>
-                <p>{location.dimension}</p>
+                {location.dimension}
             </li>
             </Link>
         ))}
