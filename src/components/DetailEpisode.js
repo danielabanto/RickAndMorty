@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import ConectCharacter from './ConectCharacter'
+import { connect } from 'react-redux'
+import * as characterActions from '../actions/characterActions'
 import './scss/detailEpisode.scss'
 
 const DetailEpisode = (props) => {
-    console.log(props)
+
+    useEffect(() => {
+        if(!props.characters.length){
+            traerData() 
+        }
+    }, [])
+
+    const traerData = async () =>{
+        await props.traerTodos()
+    }
+
+    // console.log(props)
     const {state: episode} = props.location
-    console.log(episode)
     return(
         <div className="DetailEpisode_container">
             <h2>{episode.name}</h2>
@@ -13,9 +26,18 @@ const DetailEpisode = (props) => {
             <p>Air date: {episode.air_date}</p>
             <details>
                 <summary>Characters: {episode.characters.length}</summary>
+                <div className="DetailEpisode_character_container">
                 {episode.characters.map((character, count) => (
-                    <span key={count}>{character.split('https://rickandmortyapi.com/api/character/')[1]}  . </span>
+                    <ConectCharacter 
+                        key = {count}
+                        // cargando = {props.cargando}
+                        // error = { props.error } 
+                        // character = { props.characters.find((element)=>{element.id == character.split('https://rickandmortyapi.com/api/character/')[1] })}
+                        id = {character.split('https://rickandmortyapi.com/api/character/')[1]} 
+                    />
                 ))}
+                </div>
+                
             </details>
             <div className="go_back_container">
                 <p><a className="go_back" onClick={props.history.goBack}>Regresar</a></p>
@@ -24,4 +46,9 @@ const DetailEpisode = (props) => {
     )
 }
 
-export default DetailEpisode
+const mapStateToProps = ({characterReducer}) => characterReducer
+const mapDispatchToProps = {
+    ...characterActions
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetailEpisode)

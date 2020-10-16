@@ -20,14 +20,15 @@ const Character = (props) => {
     }
     // traerData()
     const moreCharacters = () =>{
+        setVerboton(false)
         traerData()
         if ( final+INCREMENTO >= characters.length-1 ) {
             setFinal(characters.length)
         } else {
             setFinal( final+INCREMENTO ) 
         }
-        if (final >= characters.length) {
-            setVerboton(false)
+        if (final < characters.length) {
+            setTimeout(() => setVerboton(true), 100)
         } 
     }
     return (

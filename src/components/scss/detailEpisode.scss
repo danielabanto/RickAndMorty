@@ -16,6 +16,17 @@
 .DetailEpisode_container p{
     padding-bottom: 10px;
 }
+
+.DetailEpisode_container details summary:hover{
+    cursor: pointer;
+}
+.DetailEpisode_character_container{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 5px;
+    padding: 15px;
+}
+
 .go_back_container{
     padding-top: 20px;
 }
@@ -29,16 +40,24 @@
     cursor: pointer;
     // font-size: 1.02em;
 }
+
 @media screen and (max-width: 1023px){
     .DetailEpisode_container{
         text-align: center;
     }
+    .DetailEpisode_character_container{
+        grid-template-columns: repeat(6,1fr);
+    }
 }
 @media screen and (max-width: 767px){
-    
+    .DetailEpisode_character_container{
+        grid-template-columns: repeat(5,1fr);
+    }
 }
 @media screen and (max-width: 480px){
-
+    .DetailEpisode_character_container{
+        grid-template-columns: repeat(3,1fr);
+    }
 }
 @media screen and (max-width: 320px){
     

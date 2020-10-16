@@ -5,9 +5,11 @@ import * as characterActions from '../actions/characterActions'
   
 const Characters = (props) => {
     useEffect(() => {
-      props.traerTodos()
+      // if (!props.characters.length){
+        props.traerTodos()
+      
     },[])
-    // console.log(props)
+    console.log(props)
     if (props.error) {
       return `Error: ${props.error.message}`;
     }

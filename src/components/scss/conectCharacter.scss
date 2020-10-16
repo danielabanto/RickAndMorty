@@ -1,0 +1,13 @@
+.ConectCharacter_div {
+    display: flex;
+    flex-direction: column-reverse;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    height: 120px;
+    text-align: center;
+}
+.ConectCharacter_div span{
+    background-color: rgba(0, 0, 0, .5);
+}
