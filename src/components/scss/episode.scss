@@ -101,9 +101,15 @@
         // padding-left: 50px;
         width: 100%;
     }
+    .Episode_seleccione{
+        height: 350px;
+    }
 }
 @media screen and (max-width: 480px){
-
+    .Episode_seleccione{
+        height: 300px;
+        background-position: -100px;
+    }
 }
 @media screen and (max-width: 320px){
     

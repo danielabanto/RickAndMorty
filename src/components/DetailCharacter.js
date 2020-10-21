@@ -1,14 +1,10 @@
 import React from 'react'
 import './scss/detailCharacter.scss'
-// import { Link } from 'react-router-dom'
 
 const DetailCharacter = (props) => {
-    // console.log(props.location.state)
-    // console.log(props.match.params.id)
+
     const data = props.location.state
-    // const handleClick = () => {
-    //     console.log(props)
-    // }
+
     return(
         <div className="DetailCharacter_container" >
             <div className="DetailCharacter_info_container">

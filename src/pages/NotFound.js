@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
-import confused from '../img/confused.jpg'
 import './scss/notFound.scss'
 
 const NotFound = () => {

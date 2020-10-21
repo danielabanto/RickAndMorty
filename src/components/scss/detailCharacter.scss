@@ -28,6 +28,9 @@
 .DetailCharacter_content h2{
     padding: 10px 0px;
 }
+.DetailCharacter_content details summary{
+    cursor: pointer;
+}
 .DetailCharacter_summary{
     font-size: 1.5rem;
 }

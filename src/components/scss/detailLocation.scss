@@ -15,6 +15,15 @@
 .DetailLocation_container p{
     padding-bottom: 10px;
 }
+.DetailLocation_character_container{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 5px;
+    padding: 15px;
+}
+.DetailLocation_container details summary:hover{
+    cursor: pointer;
+}
 .go_back{
     text-align: right;
     font-style: italic;
@@ -31,10 +40,14 @@
     }
 }
 @media screen and (max-width: 767px){
-    
+    .DetailLocation_character_container{
+        grid-template-columns: repeat(5,1fr);
+    }
 }
 @media screen and (max-width: 480px){
-
+    .DetailLocation_character_container{
+        grid-template-columns: repeat(3,1fr);
+    }
 }
 @media screen and (max-width: 320px){
     

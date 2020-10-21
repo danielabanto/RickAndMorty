@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom'
 import Spinner from '../general/Spinner'
 import './scss/episode.scss'
 
-// import imagen1 from '../img/temporada1.jpg'
-// import imagen2 from '../img/temporada2.jpg'
-// import imagen3 from '../img/temporada3.jpg'
-// import imagen4 from '../img/temporada4.jpg'
-
 const Episode = (props) => {
     const {data, loading} = props.state
     const [indice, setIndice]  = useState('')

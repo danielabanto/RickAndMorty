@@ -45,9 +45,6 @@
     .DetailEpisode_container{
         text-align: center;
     }
-    .DetailEpisode_character_container{
-        grid-template-columns: repeat(6,1fr);
-    }
 }
 @media screen and (max-width: 767px){
     .DetailEpisode_character_container{

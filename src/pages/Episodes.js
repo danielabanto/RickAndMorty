@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Episode from '../components/Episode'
-import Spinner from '../general/Spinner'
 
 class Episodes extends Component {
     state = {
