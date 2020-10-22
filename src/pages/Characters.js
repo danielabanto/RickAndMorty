@@ -9,10 +9,6 @@ const Characters = (props) => {
         props.traerTodos()
       }
     },[])
-    console.log(props)
-    if (props.error) {
-      return `Error: ${props.error.message}`;
-    }
     return (
       // <h1>hola mundo</h1>
       <Character 

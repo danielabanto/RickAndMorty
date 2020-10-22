@@ -17,7 +17,6 @@ const DetailLocation = (props) => {
     }
 
     const {state: location} = props.location
-    console.log(location)
     return(
         <div className="DetailLocation_container">
             <h2>{location.name}</h2>

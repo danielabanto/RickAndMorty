@@ -1,10 +1,16 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { connect } from 'react-redux'
+import * as episodeActions from '../actions/episodeActions'
+import ConectEpisode from './ConectEpisode'
 import './scss/detailCharacter.scss'
 
 const DetailCharacter = (props) => {
-
+    useEffect(()=>{
+        if(!(Object.keys(props.episodes).length>0)){
+            props.traerTodos()
+        }
+    },[])
     const data = props.location.state
-
     return(
         <div className="DetailCharacter_container" >
             <div className="DetailCharacter_info_container">
@@ -20,9 +26,15 @@ const DetailCharacter = (props) => {
                     <p>Status: {data.status}</p>
                     <details open>
                         <summary className="DetailCharacter_summary">Episodes: {data.episode.length}</summary>
-                        {data.episode.map((episode, num)=>(
-                            <span key={num}>{episode.split('https://rickandmortyapi.com/api/episode/')[1]}  .  </span>  
-                        ))}
+                        <div className="DetailCharacter_episode_container">
+                            {data.episode.map((episode, num)=>(
+                                <ConectEpisode 
+                                    key = {num}
+                                    id = {episode.split('https://rickandmortyapi.com/api/episode/')[1]}
+                                />
+                                // <span key={num}>{episode.split('https://rickandmortyapi.com/api/episode/')[1]}  .  </span>  
+                            ))}
+                        </div>
                         
                     </details>
                 </div>
@@ -34,4 +46,8 @@ const DetailCharacter = (props) => {
     )
 }
 
-export default DetailCharacter
+const mapStateToProps = ({episodeReducer}) => episodeReducer
+const mapDispatchToProps = {
+    ...episodeActions
+}
+export default connect(mapStateToProps, mapDispatchToProps)(DetailCharacter)

@@ -16,7 +16,6 @@ const DetailEpisode = (props) => {
         await props.traerTodos()
     }
 
-    // console.log(props)
     const {state: episode} = props.location
     return(
         <div className="DetailEpisode_container">
@@ -30,9 +29,6 @@ const DetailEpisode = (props) => {
                 {episode.characters.map((character, count) => (
                     <ConectCharacter 
                         key = {count}
-                        // cargando = {props.cargando}
-                        // error = { props.error } 
-                        // character = { props.characters.find((element)=>{element.id == character.split('https://rickandmortyapi.com/api/character/')[1] })}
                         id = {character.split('https://rickandmortyapi.com/api/character/')[1]} 
                     />
                 ))}

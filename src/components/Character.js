@@ -8,7 +8,7 @@ const Character = (props) => {
     const [montado, setMontado] = useState(false)
     const [renderArray, setRenderArray] = useState([])
     const [final, setFinal] = useState(0)
-    const { characters, cargando} = props
+    const { characters, cargando, error} = props
     const INCREMENTO = 20
     useEffect(()=>{
         if (characters || montado){
@@ -39,6 +39,7 @@ const Character = (props) => {
             setTimeout(() => setVerboton(true), 100)
         } 
     }
+    if (error) {return <h3>Ocurrió un error: {error}</h3>}
     return (
       <>
         <ul className="container_gallery">

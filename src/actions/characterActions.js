@@ -15,8 +15,6 @@ export const traerTodos = () => async (dispatch) => {
             pages = data.info.pages
             page += 1
         } while (page <= pages)
-        console.log('pages', pages)
-        console.log(dataTotal.length)
         dispatch({
             type: TRAER_TODOS,
             payload: dataTotal

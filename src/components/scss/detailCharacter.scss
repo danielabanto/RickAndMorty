@@ -28,6 +28,10 @@
 .DetailCharacter_content h2{
     padding: 10px 0px;
 }
+.DetailCharacter_episode_container{
+    display: flex;
+    flex-wrap: wrap;
+}
 .DetailCharacter_content details summary{
     cursor: pointer;
 }

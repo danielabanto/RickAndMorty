@@ -27,7 +27,6 @@ const Header = () => {
     }
 
     const handleclick = () => {
-        console.log('click')
         const header_list = document.querySelector('.header_list')
         header_list.classList.toggle('flex')
     }

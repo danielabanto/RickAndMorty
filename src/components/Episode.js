@@ -4,7 +4,7 @@ import Spinner from '../general/Spinner'
 import './scss/episode.scss'
 
 const Episode = (props) => {
-    const {data, loading} = props.state
+    const {episodes, cargando, error} = props
     const [indice, setIndice]  = useState('')
     const handleClick = (e) => {
         setIndice(e.target.name)
@@ -35,12 +35,13 @@ const Episode = (props) => {
             }
         }
     }, [indice])
+    if (error) {return <h3>Ocurrió un error: {error}</h3>}
     return(
     <div className="Episode_container">
-        {(loading) && < Spinner />} 
+        {(cargando) && < Spinner />} 
         <div className="Episode_Temporadas">
             <p>Seasons: </p>
-            {Object.keys(data).map((nro) => (
+            {Object.keys(episodes).map((nro) => (
                 <a
                     className="temporadas_num"
                     key={nro}
@@ -58,17 +59,17 @@ const Episode = (props) => {
                         <img src='' id="temporada_portada"/>
                     </figure>
                     <ul>
-                    {Object.keys(data[indice]).map((num) => (
+                    {Object.keys(episodes[indice]).map((num) => (
                         <Link 
                             to={{
-                                pathname: `/episode/${data[indice][num].id}`,
-                                state: data[indice][num]
+                                pathname: `/episode/${episodes[indice][num].id}`,
+                                state: episodes[indice][num]
                             }} 
-                            key={data[indice][num].id}
+                            key={episodes[indice][num].id}
                         >
                         <li>
-                            <p><b>Episode {data[indice][num].episode.slice(4,6)}: </b>
-                            {data[indice][num].name}</p>
+                            <p><b>Episode {episodes[indice][num].episode.slice(4,6)}: </b>
+                            {episodes[indice][num].name}</p>
                         </li>
                         </Link>
                     ))}                            
