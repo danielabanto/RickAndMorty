@@ -1,10 +1,17 @@
 import React from 'react'
 import './scss/footer.scss'
+import github from '../img/github.svg'
 
 const Footer = () => {
     return(
         <footer>
-            <p>Hecha por Daniel Abanto</p>
+            <a href="https://danielabanto.github.io/" target="_blank">
+                <p>Made by Daniel Abanto</p>
+            </a>
+            <a href="https://github.com/danielabanto" target="_blank">
+                <img src={github}/>
+            </a>
+            
         </footer>
     )
 }

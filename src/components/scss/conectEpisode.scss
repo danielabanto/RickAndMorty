@@ -1,12 +1,19 @@
 .ConectEpisode_div {
     display: flex;
     flex-direction: row;
-    padding: 2px;
-    margin: 1px;
+    padding: 5px;
+    margin: 2px;
     background-color: rgba(218, 211, 122, 0.2);
     border-radius: 3px;
     // width: 100px;
 }
 .ConectEpisode_div:hover {
     background-color: rgba(218, 211, 122, .9);
+}
+
+@media screen and (max-width: 767px){
+    .ConectEpisode_div {
+        padding: 8px;
+        margin: 3px;
+    }
 }
