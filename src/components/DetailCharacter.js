@@ -18,7 +18,7 @@ const DetailCharacter = (props) => {
                     <p>Location: {data.location.name}</p>
                     <p>Specie: {data.species}</p>
                     <p>Status: {data.status}</p>
-                    <details>
+                    <details open>
                         <summary className="DetailCharacter_summary">Episodes: {data.episode.length}</summary>
                         {data.episode.map((episode, num)=>(
                             <span key={num}>{episode.split('https://rickandmortyapi.com/api/episode/')[1]}  .  </span>  

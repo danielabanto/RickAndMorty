@@ -24,7 +24,7 @@ const DetailEpisode = (props) => {
             <h3>Season: {episode.episode.slice(1,3)}</h3>
             <h3>Episode: {episode.episode.slice(4,6)}</h3>
             <p>Air date: {episode.air_date}</p>
-            <details>
+            <details open>
                 <summary>Characters: {episode.characters.length}</summary>
                 <div className="DetailEpisode_character_container">
                 {episode.characters.map((character, count) => (

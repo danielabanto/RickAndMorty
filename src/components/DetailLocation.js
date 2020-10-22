@@ -24,7 +24,7 @@ const DetailLocation = (props) => {
             <h3>Type: {location.type}</h3>
             <h3>Dimension: {location.dimension}</h3>
             <p>Created: {location.created.split('T')[0]}</p>
-            <details>
+            <details open>
                 <summary> Residents: {location.residents.length}</summary>
                 <div className="DetailLocation_character_container">
                 {location.residents.map((character, count) => (

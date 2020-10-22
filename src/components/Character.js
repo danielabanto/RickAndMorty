@@ -5,14 +5,22 @@ import './scss/character.scss'
 
 const Character = (props) => {
     const [verboton, setVerboton] = useState(true)
+    const [montado, setMontado] = useState(false)
     const [renderArray, setRenderArray] = useState([])
     const [final, setFinal] = useState(0)
     const { characters, cargando} = props
     const INCREMENTO = 20
     useEffect(()=>{
-        setFinal( final + INCREMENTO)
-        traerData()
-    }, [characters])
+        if (characters || montado){
+            setFinal( final + INCREMENTO)
+            traerData()
+        }
+    }, [characters, montado])
+    useEffect(()=>{
+        if (characters) {
+            setMontado(true)
+        }
+    },[])
     const traerData = () => {
         if (characters.length) {
             setRenderArray(characters.slice(0, final))
