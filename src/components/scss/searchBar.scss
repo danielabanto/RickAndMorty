@@ -1,0 +1,20 @@
+.SearchBar_container{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.SearchBar_container input{
+    padding: .2rem 10px .2rem 20px;
+    border-radius: 15px;
+    height: 2.4rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 20px;
+    outline: none;
+    font-size: 1.3rem;
+}
+::placeholder{
+    font-size: 1.3rem;
+    // color: rgb(173, 119, 37);
+    // font-style: italic;
+}
